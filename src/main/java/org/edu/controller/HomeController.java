@@ -36,6 +36,26 @@ public class HomeController {
 				
 		return "weare";
 	}
+		
+		/**
+		 * we are 테스트용 파일 입니다.
+		 */
+		@RequestMapping(value = "/blog", method = RequestMethod.GET)
+		public String blog(Locale locale, Model model) {
+					
+			return "blog";
+			
+	}
+		/**
+		 * we are 테스트용 파일 입니다.
+		 */
+		@RequestMapping(value = "/contactus", method = RequestMethod.GET)
+		public String contactus(Locale locale, Model model) {
+					
+			return "contactus";
+			
+	}
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
