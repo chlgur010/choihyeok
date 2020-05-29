@@ -98,7 +98,16 @@ left:37px;
 .work-section .work-list li a:hover .info {
 transform:translatey(37px);
 }
+/* PC용 CSS */
+/* PC용 WORK 영역 CSS */
+@media all and (min-width:1132px) {
+.work-section .sec-tit {
+text-align:left;
 }
+.work-section .work-list li {
+width:25%
+}
+
 </style>
 <script src="/resources/js/jquery.min.js"></script>
 <script src="/resources/js/common.js"></script>

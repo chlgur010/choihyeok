@@ -108,6 +108,26 @@ width:48.69791666666667%;
 .contact-section .form-box .form input:last-child{
   margin-bottom:0;
 }
+/* PC용 CONTACT US페이지 CSS */
+@media all and (min-width:1132px) {
+.contact-section .sec-tit {
+float:left;
+margin-bottom:0%;
+}
+.contact-section .form-box{
+float:right;
+width:74.5583038869258%;
+/* 844px ÷ 1132px*/
+}
+.contact-section .form-box .form, .contact-section .form-box .textarea{
+  width:48.81516587677725%;
+  /* 412px ÷ 844px*/
+  }
+    .contact-section .form-box .form{
+  margin-right:2.369668246445498%;
+  /* 20px ÷ 844px*/
+  }
+} 
 </style>
 
 <script src="/resources/js/jquery.min.js"></script>
@@ -193,7 +213,7 @@ width:48.69791666666667%;
 
 							</div>
 
-							::after
+					
 
 						</fieldset>
 
@@ -207,7 +227,7 @@ width:48.69791666666667%;
 
 				</div>
 
-				::after
+			
 
 			</div>
 			<footer class="footer">

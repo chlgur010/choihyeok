@@ -66,6 +66,24 @@ width:31.59722222222222%;
 .blog-section .blog-list li:first-child{
   margin-left:0;
 }
+/* PC용 CSS */
+/* PC BLOG영역 CSS */
+@media all and (min-width:1132px) {
+.blog-section .sec-tit{
+  float:left;
+  margin-bottom:0;
+  }
+  .blog-section .blog-list{
+  float:right;
+  width:74.5583038869258%;
+  /* 844px ÷ 1132px*/
+  }
+  .blog-section .blog-list li{
+  width:31.75355450236967%;
+  /* 268px ÷ 844px*/
+  margin-left:2.369668246445498%;
+  /* 20px ÷ 844px*/
+  }
 </style>
 <script src="/resources/js/jquery.min.js"></script>
 <script src="/resources/js/common.js"></script>
