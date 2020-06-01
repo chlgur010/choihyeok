@@ -230,8 +230,8 @@ color: blue !important;
 			<p class="copyright">LOGO</p>
 		</footer>
 	</div>
-	<a href="#" class="s_point"></a>
-	<p class="go_top">TOP<P>
+	<a href="#" class="s_point"><p class="go_top">TOP<P></a>
+	
 	
 </body>
 </html>

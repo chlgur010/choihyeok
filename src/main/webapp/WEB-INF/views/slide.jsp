@@ -21,8 +21,8 @@
 	margin: 0 auto;
 }
 
-.col-1, .col-2, .col-3, col-4, col-5, col-6, col-7, col-8, col-9, col-10,
-	col-11 {
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9,
+	.col-10, .col-11 {
 	float: left;
 	margin-right: 3.8%;
 	min-height: 1px;
@@ -122,10 +122,22 @@ img, iframe {
 		padding-right: 20px;
 	}
 }
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.blind {
+	visiblity: hidden;
+	position: absolute;
+	top: -10000px;
+	height: 1px;
+	width: 1px;
+}
 </style>
 <style>
-	
-	
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 /* 구글 나눔폰트 가져오기 */
 body, h1, h2, h3, h4, h5, h6, li, p {
@@ -140,8 +152,9 @@ body {
 }
 
 body header {
-	background: url(/resources/images/jjang.jpg) no-repeat 50% 55%;
-	-webkit-background-size: cover -moz-background-size: cover;
+	background: url(/resources/images/header-bg.jpg) no-repeat 50% 55%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
 	background-size: cover;
 	position: fixed;
 	width: 100%;
@@ -149,47 +162,271 @@ body header {
 	height: 90px;
 	z-index: 999;
 }
-body > section {
-	margin-top:90px;
-	}
-	body ul, body ol {
-	padding:0;
+
+body>section {
+	margin-top: 90px;
+}
+
+body ul, body ol {
+	padding: 0;
 	list-style: none;
-	}
-	body header .row #gnb,
-	body header .row {
+}
+
+body header .row #gnb, body header .row {
 	position: relative;
-	margin:0 auto;
-	}
-	body header .row #brand {
-	background: url(/resources/images/insta.jpg) no-repeat 40% 30%;
+	margin: 0 auto;
+}
+
+body header .row #brand {
+	background: url(/resources/images/logo.png) no-repeat 0% 60%;
 	height: 90px;
 	width: 90px;
-	margin:0px;
+	margin: 0px;
 	text-indent: -10000px;
-	}
-	body header .row #brand:hover {
-	background-color: rgba(0,0,0,1);
-	}
-	body header .row #brand:hover:before {
-	top:35px;
+}
+
+body header .row #brand:hover {
+	background-color: rgba(0, 0, 0, 0.1)
+}
+
+body header .row #brand:hover:before {
+	top: 35px;
 	-webkit-transform: rotate(360deg);
 	-moz-transform: rotate(360deg);
 	-ms-transform: rotate(360deg);
 	transform: rotate(360deg);
-	}
-	body header .row #gnb {
+}
+
+body header .row #gnb {
 	position: absolute;
 	top: 35px;
 	right: 0;
+}
+
+body header .row #gnb ul {
+	margin: 0;
+}
+
+body header .row #gnb ul li {
+	float: left;
+	margin-right: 30px;
+}
+
+body header .row #gnb ul li:last-child {
+	margin-right: 0;
+}
+
+body header .row #gnb ul li a {
+	font-size: 16px;
+	color: #2a3b90;
+	text-decoration: none;
+	text-shadow: 0 2px #282020;
+}
+
+body header .row #gnb ul li a:hover, body header .row #gnb ul li a:focus
+	{
+	color: #fff;
+	text-shadow: none;
+	font-weight: bold;
+}
+
+body section#contents h2, body section#contents h3 {
+	position: relative;
+	margin-bottom: 40px;
+	border-bottom: 1px solid #e1dcda;
+	padding-bottom: 20px;
+	font-size: 24px;
+	line-height: 34px;
+	color: #21759A;
+	padding: 20px;
+}
+
+body section#contents h2:before, body section#contents h3:before {
+	content: "";
+	position: absolute;
+	width: 34px;
+	height: 1px;
+	background: #21759A;
+	top: -10px;
+	left: -36px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+body section#contents li {
+	margin-bottom: 60px;
+}
+
+body section#contents li img {
+	border: 1px solid red;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body section#contents li h4, body section#contents li h5 {
+	font-size: 22px;
+}
+
+body section#contents li h5 {
+	margin-top: 22px;
+	margin-bottom: 32px;
+}
+
+body section#contents li p {
+	font-size: 14px;
+	line-height: 24px;
+	color: #818181;
+}
+
+body footer {
+	border-top: 1px solid #e2e2e2;
+	padding-top: 20px;
+}
+
+body footer p {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background: url(/resources/images/insta.jpg) no-repeat 0% 60%;
+}
+
+body footer p small {
+	display: block;
+	line-height: 1.2;
+}
+
+body footer p small a:link, body footer p small a:visited {
+	color: #606060;
+	text-decoration: none;
+}
+
+body footer p small a:hover, body footer p small a:active {
+	color: #212121;
+}
+
+::selection {
+	background-color: #eee7dd;
+	color: #542e1c;
+}
+
+::-moz-selection {
+	background-color: #eee7dd;
+	color: #542e1c;
+}
+/* 태블릿: 960 이하 */
+@media all and (max-width: 960px) {
+	body section#contents li, .row .col-1, .row .col-2, .row .col-3, .row .col-4,
+		.row .col-5, .row .col-6, .row .col-7, .row .col-8, .row .col-9, .row .col-10,
+		.row .col-11, .row .col-12 {
+		text-align: center;
 	}
-	
+	body header, body section#contents, body footer {
+		width: 100%;
+		padding-left: 0%;
+		padding-right: 0%;
+	}
+	section.banner_slider {
+		display: none;
+	}
+	body section#contents {
+		margin-top: 90px;
+	}
+	nav > ul { display: none;}
+	body header {
+		z-index: 999;
+	}
+	body header .hamberger {
+		float: right;
+	}
+	body header a#pull {
+		position: relative;
+		top: -55px;
+	}
+	body header a#pull:after {
+		content: "";
+		background: url('/resources/images/nav-icon.png') no-repeat;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		right: 0px;
+	}
+	 nav > ul { display: none;}
+	body header .row #gnb {
+		position: static;
+	}
+	body header .row #gnb ul {
+		background-color: #fff;
+		width: 100%;
+	}
+	body header .row #gnb ul li {
+	float: none;
+	margin-right: 0;
+	margin-bottom: 1px;
+	border-top: 1px solid #555;
+	border-bottom: 1px solid #555;
+	padding: 10px 30px;
+	background-color: rgba(56,56,56,1);
+	}
+	body header .row #gnb ul li:hover,
+	body header .row #gnb ul li:active {
+	background-color: rgba(0,0,0,1);
+	}
+	body header .row #gnb ul li a {
+	color: #fff;
+	text-shadow: none;
+	}
+	section#contents #main img,
+	section#contents #sub img {
+	width: 90%;
+	padding: 10px;
+	border: 1px solid #e0e0e0;
+	background: #fff;
+	}
+	footer p {
+	padding-top: 0px !important;
+	padding-bottom: 15px !important;
+	width: 90% !important;
+	margin: 0 auto !important;
+	background: none !important;
+	}
+}
+.nivo-caption { text-align: center !important; }
 </style>
 <script src="/resources/js/jquery.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function($) { //j쿼리 시작 : $(document).ready(function(){ }); == $(function(){ }); 과 동일
-
+	//모바일메뉴 로딩시
+	var pull = $('#pull');
+	var menu = $('nav > ul');
+	$(pull).on('click', function(e) {
+		var w = $(window).width();
+		if(w<960) {
+			if(menu.is(':visible')) {
+				menu.slideToggle("fast");
+				return;
+			}
+			if(menu.is(':hidden')) {
+				menu.slideToggle("slow")
+				return;
+			}
+		}
+	});//click 이벤트 끝
 	});
+	//모바일 토클에 대한 스타일 -> PC에서는 없앤다.
+	jQuery(function($){ 
+          $(window).resize(function(){
+              var w=$(window).width();
+              var menu=$('nav > ul');
+              if(w>960 )	{
+                menu.removeAttr('style');
+              }else{
+
+              }
+              return;
+          });
+		});
 </script>
 </head>
 <body>
@@ -215,9 +452,15 @@ body > section {
 		</div>
 	</header>
 	<!-- e:header-->
+	<script src="/resources/js/jquery.nivo.slider.js"></script>
+  <link href="/resources/css/nivo-slider.css" media="screen" rel="stylesheet" type="text/css">
+  <script type="text/javascript">
 	<section class="banner_slider">
 		<div id="slider" class="nivoSlider">
-			<img src="/resources/images/hi.jpg" title="슬라이드1" />
+			<img src="/resources/images/slide1.jpg" title="슬라이드1" />
+			<img src="/resources/images/slide2.jpg" title="슬라이드2" />
+			<img src="/resources/images/slide3.jpg" title="슬라이드3" />
+			<img src="/resources/images/slide4.jpg" title="슬라이드4" />		    
 		</div>
 	</section>
 	<section id="contents" class="row">
@@ -226,14 +469,14 @@ body > section {
 				리페어(재생) 부분을 운영하고 있습니다.</h2>
 			<ul>
 				<li class="clearfix"><img class="col-4"
-					src="/resources/images/tell.jpg" alt="" width="296" height="206" />
+					src="/resources/images/hi.jpg" alt="" width="296" height="206" />
 					<div class="col-8 last">
 						<h4>워드프레스 홈페이지 전문제작</h4>
 						<p>대부분의 언어가 지원되는 세계적인 홈페이지 제작 기반인 워드프레스를 자체 제작하는 디자인으로 사용자 위주의
 							사이트를 제작 해 드립니다.</p>
 					</div></li>
 				<li class="clearfix"><img class="col-8 fr last"
-					src="/resources/images/tell.jpg" alt="" width="620" height="416" />
+					src="/resources/images/hi.jpg" alt="" width="620" height="416" />
 					<div class="col-4">
 						<h4>사각 그리드형 홈페이지에는 반응형 웹을 사용합니다.</h4>
 						<p>요즘은 홈페이지 접속하는 다양한 방법이 있습니다. 모바일로 대표되는 휴대폰이나, 태블릿 그리고, PC 등
@@ -249,16 +492,16 @@ body > section {
 				사이트 구성이 많습니다. 관심있게 살펴봐 주시기 바랍니다.
 			</h3>
 			<ul>
-				<li class="col-3"><img src="/resources/images/tell.jpg" alt=""
-					width="218" height="325" />
+				<li class="col-3"><img src="/resources/images/hi.jpg"
+					alt="" width="218" height="325" />
 					<h5>글로벌윙사이트 리뉴얼 완료</h5>
 					<p>사이트URL: www.globalwing.co.kr ( 제로보드xe기반 ) -> 워드프레스 기반으로
 						리뉴얼완료 글로벌윙 사이트 메인시안</p></li>
-				<li class="col-3"><img src="/resources/images/tell.jpg" alt=""
-					width="218" height="326" />
+				<li class="col-3"><img src="/resources/images/hi.jpg"
+					alt="" width="218" height="326" />
 					<h5>크리웰터 사이트 오픈완료.</h5>
 					<p>크리웰터 사이트 작업중 입니다. 워드프레스 기반의 영문홈페이지 입니다. 오픈되었습니다.</p></li>
-				<li class="col-6 last"><img src="/resources/images/tell.jpg"
+				<li class="col-6 last"><img src="/resources/images/hi.jpg"
 					alt="" width="459" height="324" />
 					<h5>에코바스 사이트 작업완료.</h5>
 					<p>에코바스 사이트는 한글/영문 다국어 사이트로 워드프레스로 작업완료http://eco-bath.co.kr</p></li>
