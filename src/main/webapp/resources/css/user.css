@@ -19,7 +19,7 @@
 }
 
 .display-section .desc {
-	font-family: "굴림";
+	font-family: "Nanum Gothic";
 	color: #616161;
 	line-height: 1.9;
 }
@@ -49,7 +49,7 @@
 
 .promotion-section .promo-list li p {
 	font-size: 14px;
-	font-family: "궁서";
+	font-family: "NanumGothic";
 	color: #616161;
 	line-height: 1.5;
 }
@@ -303,6 +303,9 @@ contact-section {
 	}
 }
 
+/* 태블릿 footer 영역 */
+
+
 /* PC용 CSS */
 @media all and (min-width:1132px) {
 	/* PC WE ARE 영역 CSS */
@@ -380,4 +383,11 @@ contact-section {
 		margin-right: 2.369668246445498%;
 		/* 20px ÷ 844px*/
 	}
+}
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+/* 구글 나눔폰트 가져오기 */
+body, h1, h2, h3, h4, h5, h6, li, p, button {
+	font-family: "Nanum Gothic", "NanumGothic" !important;
+	font-size: 14px;
+	line-height: 24px;
 }

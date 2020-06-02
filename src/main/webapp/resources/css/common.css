@@ -21,6 +21,9 @@ position:relative;
 padding:18px 5%;
 }
 .header .logo {
+background: url(/resources/images/logo.png) no-repeat 0% 30%;	
+}
+.header .logo {
 float:left;
 }
 .header .logo a {
@@ -70,8 +73,9 @@ height:320px;
 }
 .footer p {
 margin: 21px 0;
-color: #3f51b5;
+color: #b5963f;
 text-align:center;
+background:url(/resources/images/tell.jpg); 
 }
 /* 태블릿용 CSS */
 @media all and (min-width:768px) {

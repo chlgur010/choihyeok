@@ -393,6 +393,9 @@ body footer p small a:hover, body footer p small a:active {
 	}
 }
 .nivo-caption { text-align: center !important; }
+
+.nivoSlider { height:400px !important ;}
+.nivoSlider img{ height:400px !important;}
 </style>
 <script src="/resources/js/jquery.min.js"></script>
 <script type="text/javascript">
@@ -455,55 +458,68 @@ body footer p small a:hover, body footer p small a:active {
 	<script src="/resources/js/jquery.nivo.slider.js"></script>
   <link href="/resources/css/nivo-slider.css" media="screen" rel="stylesheet" type="text/css">
   <script type="text/javascript">
+  jQuery(function($){ //j쿼리 시작 : $(document).ready(function(){ }); == $(function(){ }); 과 동일
+      //$('#slider').nivoSlider();
+      $('#slider').nivoSlider({
+              effect: 'slideInLeft',
+              directionnav: true,
+              controlNav: false,
+              pauseOnHover: false,
+              prevText: '<span style="font-size:30px;color:#fff;padding-left:10px;"><</span>',
+  			  nextText: '<span style="font-size:30px;color:#fff;padding-right:10px;">></span>',
+        });
+      $('.nivo-prevNav').on('mouseover', function(){
+           $('#slider img').attr("data-transition","slideInRight");
+      });
+      $('.nivo-nextNav').on('mouseover', function(){
+           $('#slider img').attr("data-transition","slideInLeft");
+      });
+});
+  </script>
 	<section class="banner_slider">
 		<div id="slider" class="nivoSlider">
-			<img src="/resources/images/slide1.jpg" title="슬라이드1" />
-			<img src="/resources/images/slide2.jpg" title="슬라이드2" />
-			<img src="/resources/images/slide3.jpg" title="슬라이드3" />
-			<img src="/resources/images/slide4.jpg" title="슬라이드4" />		    
+			<img src="/resources/images/slide1.jpg" title="앙 기모링~" />
+			<img src="/resources/images/slide2.jpg" title="안녕하십니까" />
+			<img src="/resources/images/slide3.jpg" title="행님덜 반갑습니다" />
+			<img src="/resources/images/slide4.jpg" title="^^ " />		    
 		</div>
 	</section>
 	<section id="contents" class="row">
 		<article id="main">
-			<h2>타임스페이스는 사용자 중심의 웹페이지를 제작하는 회사 입니다. 그리고, 부가 사업으로 노트북/LCD모니터
-				리페어(재생) 부분을 운영하고 있습니다.</h2>
+			<h2>심부름 센터.</h2>
 			<ul>
 				<li class="clearfix"><img class="col-4"
 					src="/resources/images/hi.jpg" alt="" width="296" height="206" />
 					<div class="col-8 last">
-						<h4>워드프레스 홈페이지 전문제작</h4>
-						<p>대부분의 언어가 지원되는 세계적인 홈페이지 제작 기반인 워드프레스를 자체 제작하는 디자인으로 사용자 위주의
-							사이트를 제작 해 드립니다.</p>
+						<h4>사람 만들기 전문업체</h4>
+						<p>아이가 말을 안들어 걱정이시라구요? 밥을 안먹어서 걱정이시라구요? 이제 걱정하지마세요! 이곳에 맡겨주시면 밥마노면 눈이돌아가고 어머니 아버지 말에 복명복창하는 아이로 만들어드립니다.</p>
 					</div></li>
 				<li class="clearfix"><img class="col-8 fr last"
 					src="/resources/images/hi.jpg" alt="" width="620" height="416" />
 					<div class="col-4">
-						<h4>사각 그리드형 홈페이지에는 반응형 웹을 사용합니다.</h4>
-						<p>요즘은 홈페이지 접속하는 다양한 방법이 있습니다. 모바일로 대표되는 휴대폰이나, 태블릿 그리고, PC 등
-							다양한 사용자 환경에 여러분의 홈페이지가 노출되게 됩니다. 공통된 디자인과, 내용을 다양한 접속환경에서 사용하실 수
-							있게 제작해 드립니다.</p>
+						<h4>떼인 돈 받아드립니다.</h4>
+						<p>요즘 믿을만한 업체가없습니다 저희 업체는 떼인 돈은물론 당사자가 원하시면 사람까지 없애드립니다.</p>
 					</div></li>
 			</ul>
 		</article>
 		<!-- e:#main -->
 		<article id="sub" class="row clearfix">
 			<h3>
-				최근 공지사항<br /> 타임스페이스에서 현재 작업중인 홈페이지와 제작완료된 홈페이지를 보실 수 있습니다. 재미있는
-				사이트 구성이 많습니다. 관심있게 살펴봐 주시기 바랍니다.
+				구인 구직<br /> 저희와 함께 일을하실 깡좋고 겁없고 잃을거없는분 구합니다 동종업계 최고대우 해드립니다
 			</h3>
 			<ul>
 				<li class="col-3"><img src="/resources/images/hi.jpg"
 					alt="" width="218" height="325" />
-					<h5>글로벌윙사이트 리뉴얼 완료</h5>
+					<h5>신분세탁 완료</h5>
 					<p>사이트URL: www.globalwing.co.kr ( 제로보드xe기반 ) -> 워드프레스 기반으로
 						리뉴얼완료 글로벌윙 사이트 메인시안</p></li>
 				<li class="col-3"><img src="/resources/images/hi.jpg"
 					alt="" width="218" height="326" />
-					<h5>크리웰터 사이트 오픈완료.</h5>
+					<h5>돈 세탁 완료.</h5>
 					<p>크리웰터 사이트 작업중 입니다. 워드프레스 기반의 영문홈페이지 입니다. 오픈되었습니다.</p></li>
 				<li class="col-6 last"><img src="/resources/images/hi.jpg"
 					alt="" width="459" height="324" />
-					<h5>에코바스 사이트 작업완료.</h5>
+					<h5>정신개조 완료.</h5>
 					<p>에코바스 사이트는 한글/영문 다국어 사이트로 워드프레스로 작업완료http://eco-bath.co.kr</p></li>
 			</ul>
 		</article>
